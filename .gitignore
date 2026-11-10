@@ -1,0 +1,17 @@
+# Compiled C/C++ executables
+cpu/first_program
+cpu/first_debug
+cpu/cpu_benchmark_O0
+cpu/cpu_benchmark_O3
+cpu/first_gpu
+cpu/gpu_info
+benchmarks/cpu_gpu/vector_add
+benchmarks/cpu_gpu/matrix_multiply
+
+# Python cache
+__pycache__/
+*.pyc
+
+# Temporary files
+*.tmp
+*.log
