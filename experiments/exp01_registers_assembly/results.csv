@@ -1,0 +1,10 @@
+function,optimization,stack_frame,register_type,elements_per_loop,key_instruction,optimization_behavior
+add,-O0,Yes,32-bit GPR (edi/esi/eax),N/A,add,4 unnecessary stack memory accesses
+add,-O3,No,64/32-bit GPR (rdi/rsi/eax),N/A,lea,Zero memory accesses; single-instruction addition
+add,-O3 -mavx2,No,64/32-bit GPR (rdi/rsi/eax),N/A,lea,Same as -O3 (scalar function)
+max3,-O0,Yes,32-bit GPR,N/A,cmp + jle,Stack spills and 2 conditional branches
+max3,-O3,No,32-bit GPR,N/A,cmovl + cmovge,Branchless execution using conditional moves
+max3,-O3 -mavx2,No,32-bit GPR,N/A,cmovl + cmovge,Same as -O3 (scalar function)
+sum,-O0,Yes,32-bit GPR,1 int (4 bytes),add,Scalar loop with stack memory accesses
+sum,-O3,No,128-bit SSE2 (xmm),4 ints (16 bytes),movdqu + paddd,128-bit SIMD auto-vectorization
+sum,-O3 -mavx2,No,256-bit AVX2 (ymm),8 ints (32 bytes),vpaddd,256-bit SIMD auto-vectorization with fused load-add
