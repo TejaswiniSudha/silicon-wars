@@ -1,0 +1,4 @@
+variant,matrix_size,tile_size,time_ms,gflops,max_diff
+naive_ijk,1024,0,1123.90,1.91,0.000000
+reordered_ikj,1024,0,101.33,21.19,0.000076
+tiled_ikj,1024,64,158.35,13.56,0.000076
