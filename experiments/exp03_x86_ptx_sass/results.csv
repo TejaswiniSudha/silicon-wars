@@ -1,0 +1,4 @@
+layer,target_hardware,execution_model,instruction_width,registers_used,loop_structure,fma_instruction,memory_access
+x86-64,AMD Ryzen 9 8940HX (CPU),SIMD (8 floats/vector),Variable (1-15 bytes),Physical 256-bit YMM (ymm0/ymm1),Explicit loop (.L4 advancing 32 bytes),vfmadd213ps,vmovups (RAM/Cache)
+PTX,Virtual NVIDIA GPU ISA,SIMT (1 element/thread),Textual Virtual ISA,Virtual typed (%r/%f/%rd/%p),No loop (thread ID + bounds check),fma.rn.f32,ld.global.f32 / st.global.f32
+SASS,NVIDIA GPU (sm_75 default / JIT to Blackwell),SIMT (32-thread warps),Fixed 128-bit (16 bytes),Physical 32-bit (R0-R7/P0) + c[0x0],No loop (predicated @P0 EXIT),FFMA,LDG.E.SYS / STG.E.SYS
