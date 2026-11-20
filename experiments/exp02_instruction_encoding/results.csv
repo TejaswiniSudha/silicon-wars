@@ -1,0 +1,5 @@
+instruction,hex_bytes,length_bytes,rex_prefix,opcode,modrm,immediate,notes
+"add eax, ebx",01 d8,2,None,01,d8,None,32-bit register-to-register add (Mod=11 Reg=011 R/M=000)
+"add rax, rbx",48 01 d8,3,48,01,d8,None,REX.W prefix (0x48) promotes 32-bit add to 64-bit
+"mov eax, 5",b8 05 00 00 00,5,None,b8,None,05 00 00 00,Register baked into opcode; 32-bit immediate in Little-Endian
+ret,c3,1,None,c3,None,None,Single-byte near return opcode
