@@ -1,0 +1,5 @@
+device,case,time_ms,checksum
+CPU,unsorted_branch,10.738,15316398560
+CPU,sorted_branch,1.416,15316398560
+GPU,coherent_warp,0.234,0
+GPU,divergent_warp,0.377,0
